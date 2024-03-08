@@ -1,6 +1,6 @@
 import './AllBooks.css'
 import { Container, Row, Col, Card} from 'react-bootstrap';
-import jsonData from './fantasy.json';
+import jsonData from '../../data/fantasy.json';
 
 export default function AllBooks ({ img, title }) { 
 
@@ -18,8 +18,7 @@ export default function AllBooks ({ img, title }) {
                                 </Card.Body>
                             </Card>
                         </Col>  
-                        )
-                         
+                        )                         
                     })}
                 </Row>
             </Container>  
