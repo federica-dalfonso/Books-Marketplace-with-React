@@ -11,9 +11,9 @@ export default function AllBooks ({ img, title }) {
                     {jsonData.map((book) => {
                         return (
                            <Col sm={6} md={3} lg={3} className='g-4'>
-                            <Card className='h-100'>
+                            <Card className='h-100 cursor-hover border-color'>
                                 <Card.Img src={book.img} className='card-image'/>
-                                <Card.Body>
+                                <Card.Body className="p-2">
                                     <Card.Title className='fs-6 text-center ellipsis'>{book.title}</Card.Title>
                                 </Card.Body>
                             </Card>
