@@ -1,0 +1,20 @@
+.card-image {
+    height: 25.5em;
+    object-fit: cover;
+    padding: 0.5em;
+}
+
+.ellipsis {
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.cursor-hover:hover {
+    cursor: pointer;
+}
+
+.border-color {
+    border-color: #3B3486;
+}
