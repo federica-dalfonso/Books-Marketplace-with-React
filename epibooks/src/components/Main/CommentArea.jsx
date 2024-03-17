@@ -3,15 +3,20 @@ import AddComment  from "./AddComment.jsx"
 import { useState, useEffect } from "react";
 
 export default function CommentArea ({asin}) {
-    
+
+    {/*uso lo stato per controllare l'inserimento di nuovi commenti*/}    
     const [comments, setComments] = useState([]);
+    {/*uso lo stato per controllare se i dati sono stati correttamente ricevuti*/}
     const [dataReceived, setDataReceived] = useState(false);
 
+    {/*funzione (come prop del form dei commenti) che raccoglie i dati e cambia lo stato*/}
     function handleCommentSubmit(commentData) {
         setComments([...comments, commentData]);
         setDataReceived(true);
     }
 
+    {/*se i dati sono stati correttamente ricevuti faccio la fetch POST per inviarli all'endpoint;
+        ciò accade quando i lo stato di commenti e dati si aggiorna*/}
     useEffect(() => {
         if(dataReceived) {
             doPost(comments);
@@ -35,6 +40,8 @@ export default function CommentArea ({asin}) {
             console.log("errore nella tua richiesta")
         }
     }
+
+    {/*fetch get per ottenere la lista commenti e renderizzarla in commentList*/}
 
     const APIget = `https://striveschool-api.herokuapp.com/api/books/${asin}/comments/`;
 

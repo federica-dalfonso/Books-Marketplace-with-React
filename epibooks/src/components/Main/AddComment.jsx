@@ -1,6 +1,6 @@
 import { Form, FloatingLabel, Button } from "react-bootstrap";
 import "./AddComment.css"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 export default function AddComment ({ asin, onSubmitComment }) {

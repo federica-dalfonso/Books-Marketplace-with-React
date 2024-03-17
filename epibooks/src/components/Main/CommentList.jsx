@@ -1,5 +1,5 @@
 import { Button, Collapse } from "react-bootstrap"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./CommentList.css"
 
 export default function CommentList ({ comments }) {

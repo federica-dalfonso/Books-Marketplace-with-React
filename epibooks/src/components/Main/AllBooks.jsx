@@ -25,6 +25,7 @@ export default function AllBooks () {
                 onChange={(e) => setInputName(e.target.value)}/>
 
                 <Row>
+                    {/*passo come prop l'ìntero libro, poi lo destrutturo nel componente*/}
                     {searchResult.map((book) => (
                         <SingleBook key={book.asin} book={book}/>
                     ))}

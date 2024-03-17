@@ -4,6 +4,7 @@ import { useState } from 'react'
 import CommentArea from "./CommentArea";
 
 export default function SingleBook ( {book}) {
+    {/*destrutturo la prop book*/}
     const { img, title, price, asin} = book;
 
     {/*bordo rosso + area commenti*/}
@@ -21,6 +22,7 @@ export default function SingleBook ( {book}) {
                     <Card.Title className='fs-6 text-center ellipsis'>{title}</Card.Title>
                     <Card.Text className="fw-lighter py-1 px-2">{price}</Card.Text>
                 </Card.Body>
+                {/*se clicco sulla card, si apre l'area commenti*/}
                 {selected && <CommentArea asin={asin}/>}
             </Card>
         </Col> 
