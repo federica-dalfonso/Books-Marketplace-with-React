@@ -5,7 +5,7 @@ import SingleBook from './SingleBook';
 import { useState } from 'react';
 
 
-export default function AllBooks ({ img, title, price }) {    
+export default function AllBooks () {    
     
     const [inputName, setInputName] = useState("");
 
@@ -26,7 +26,7 @@ export default function AllBooks ({ img, title, price }) {
 
                 <Row>
                     {searchResult.map((book) => (
-                        <SingleBook key={book.asin} image={book.img} title={book.title} price={`${book.price} euro`}/>
+                        <SingleBook key={book.asin} book={book}/>
                     ))}
                 </Row>
 
