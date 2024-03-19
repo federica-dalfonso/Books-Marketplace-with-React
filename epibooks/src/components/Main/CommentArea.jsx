@@ -19,7 +19,9 @@ export default function CommentArea ({asin}) {
         ciò accade quando i lo stato di commenti e dati si aggiorna*/}
     useEffect(() => {
         if(dataReceived) {
-            doPost(comments);
+            const lastComment = comments[comments.length -1];
+            doPost(lastComment);
+            setDataReceived(false);
         }
     }, [dataReceived, comments]);
 
@@ -28,7 +30,7 @@ export default function CommentArea ({asin}) {
 
     async function doPost(commentData) {
         try {
-            const response = await fetch(`${APIpost}`, {
+            await fetch(`${APIpost}`, {
                 method: "POST", 
                 headers: {
                    "Content-Type": "application/json",
@@ -42,11 +44,10 @@ export default function CommentArea ({asin}) {
     }
 
     {/*fetch get per ottenere la lista commenti e renderizzarla in commentList*/}
-
     const APIget = `https://striveschool-api.herokuapp.com/api/books/${asin}/comments/`;
 
     useEffect(() => {
-        const fetchComments = async () => {
+        async function getComment() {
             try {
                 const response = await fetch(APIget);
                 const data = await response.json();
@@ -55,7 +56,7 @@ export default function CommentArea ({asin}) {
                 console.log('Errore durante la richiesta dei commenti:', error);
             }
         };
-        fetchComments()
+       getComment();
     }, [] );
     
     return (

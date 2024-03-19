@@ -21,9 +21,9 @@ export default function SingleBook ( {book}) {
                 <Card.Body className="p-2 d-flex flex-column align-items-center">
                     <Card.Title className='fs-6 text-center ellipsis'>{title}</Card.Title>
                     <Card.Text className="fw-lighter py-1 px-2">{price}</Card.Text>
+                    {/*se clicco sulla card, si apre l'area commenti*/}
+                    {selected && <CommentArea asin={asin}/>}
                 </Card.Body>
-                {/*se clicco sulla card, si apre l'area commenti*/}
-                {selected && <CommentArea asin={asin}/>}
             </Card>
         </Col> 
         </>

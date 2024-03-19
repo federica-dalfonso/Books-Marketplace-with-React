@@ -1,0 +1,13 @@
+img {
+    width: 2em;
+    height: 2em;
+}
+
+span.comment-style {
+    font-style: italic;
+    font-size: 12pt;
+}
+
+span.rate-style {
+    font-size: 10pt;
+}
