@@ -1,17 +1,16 @@
-import { Container, Navbar, Nav } from "react-bootstrap";
-import './MyNav.css';
+import { Container, Navbar, Nav, Form } from "react-bootstrap";
 import logo from './logo_epibooks.png';
 import LinkItem from "./LinkItem";
 
 
-export default function MyNav () {
+export default function MyNav ({ text, onSearchChange}) {
+
 
   return (
     <Navbar className="bg-body-transparent">
-      <Container fluid>
-
+      <Container className="justify-content-start">
           <Navbar.Brand href="#">
-            <img src={logo} alt="epibooks_Logo" className="resizing"/>
+            <img src={logo} alt="epibooks_Logo" style={{width: '8em'}}/>
           </Navbar.Brand>
 
           <Nav>
@@ -20,7 +19,15 @@ export default function MyNav () {
             <Nav.Link href="#"><LinkItem text="Browse"/></Nav.Link>
           </Nav>
 
-      </Container>
+          <Form.Control className='search-field'
+            type="text" id="inputSearch"
+            placeholder="Cerca un titolo..."
+            aria-describedby='searchBooks'
+            value={text}
+            onChange={onSearchChange}
+          />  
+      </Container>     
+    
     </Navbar>
   )
 }
