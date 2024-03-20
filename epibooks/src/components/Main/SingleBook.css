@@ -22,3 +22,11 @@
 .border-color {
     border-color: #3B3486;
 }
+
+.back-color-light {
+    background-color: white;
+}
+
+.back-color-dark {
+    background-color: #2b3036;
+}

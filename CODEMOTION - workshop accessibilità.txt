@@ -1,0 +1,47 @@
+maggio Accessibily Day 4Codemotion
+
+https://dianabernabei.com/
+
+VEDI REPO DI DIANA BERNABEI
+
+Web Component
+
+WCAG Web Content Accessibility Guidelines, quattro principi: 
+1) percepibile
+2) operabile (es. navigabile tramite tastiera senza mouse)
+3) comprensibile (dal punto di vista contenutistico - sia semantica HTML ma soprattutto contenuti)
+4) robusto (compatibile con tecnologie e dispositivi diversi)
+
+WAI-ARIA attributi HTML da aggiungere ai tag per rendere i contenuti percepibili costituiti da:
+_ruoli
+_proprietà
+_stati
+
+WEB COMPONENTs
+insieme di tecnologie che ci permettono di utilizzare elementi html personalizzati, supportati nativamente dal browser 
+architettura modulare organizzata, codice più manutenibile
+differenza con framework presenti sul mercato che già ragionano per componenti: 
+PRO - standardizzazione rispetto ai framework
+	riusabilità
+	integrazione graduale
+	interoperabilità
+CONTRO - complessità iniziale
+	supporto del browser 
+	strumenti ed ecosistema (va costruito, o soluzioni ibride)
+
+SHADOW DOM albero del dom separato e isolato all'interno di un elemento HTML esistente
+
+principio del Design Atomico
+Web Component nasce prima di React! (2011)
+
+TESTARE L'Accessibilità
+screen reader open source NVDA per Windows
+
+
+impostazioni preferenze browser attivare lo shadow user agent DOM! per vedere gli elementi Shadow
+
+
+
+
+
+

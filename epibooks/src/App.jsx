@@ -3,8 +3,9 @@ import MyNav from './components/MyNav/MyNav.jsx'
 import WelcomeAlert from './components/WelcomeAlert/WelcomeAlert.jsx';
 import AllBooks from './components/Main/AllBooks.jsx';
 import Footer from './components/Footer/Footer.jsx';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import jsonData from './data/fantasy.json'
+import { ThemeContext } from "./context/ThemeContextProvider";
 
 function App() {
   //stato per l'input di ricerca in MyNav:
@@ -20,8 +21,11 @@ function App() {
     return element.title.toLowerCase().includes(inputName.toLowerCase());
   });
 
+  const { theme } = useContext(ThemeContext);
+  const appTheme = theme === "dark" ? "bg-dark" : "bg-light";
+
   return (
-    <>
+    <div className={appTheme}>        
       {/* passo le prop a MyNav per gestire la ricerca: */}
       <MyNav text={inputName} onSearchChange={handleSearch} />
 
@@ -29,7 +33,7 @@ function App() {
       {/* passo le prop a AllBooks per mostrare i risultati: */}
       <AllBooks results={searchResult}/>
       <Footer />
-    </>
+    </div>
   );
 }
 
