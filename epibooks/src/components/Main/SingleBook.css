@@ -1,7 +1,7 @@
 .card-image {
     height: 25.5em;
-    object-fit: cover;
-    padding: 0.5em;
+    object-fit: contain;
+    padding-top: 0.8em;
 }
 
 .selected-red {
@@ -19,8 +19,8 @@
     cursor: pointer;
 }
 
-.border-color {
-    border-color: #3B3486;
+.border-none {
+    border: none;
 }
 
 .back-color-light {
