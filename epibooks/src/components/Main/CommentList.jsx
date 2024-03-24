@@ -1,9 +1,14 @@
 import './CommentList.css'
-import React, { useContext } from 'react';
-import { ThemeContext } from "../../context/ThemeContextProvider";
+import SingleComment from './SingleComment';
 
-export default function CommentList () {
-    const { theme } = useContext(ThemeContext);
-
-    return <h1 className={theme === "dark" ? "text-light" : "text-dark"}>Comment</h1>
+export default function CommentList ( {commentsToShow, asinBook} ) {
+    return (
+        <>
+            {commentsToShow.map((singleComment, index) => {
+                    return <SingleComment key={index} comm={singleComment} asinBook={asinBook}/>
+                }
+                
+            )}
+        </>
+    )
 }

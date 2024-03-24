@@ -5,6 +5,7 @@ import CommentArea from './CommentArea';
 import React, { useContext } from 'react';
 import { useState } from 'react';
 import { ThemeContext } from "../../context/ThemeContextProvider";
+import './AllBooks.css'
 
 export default function AllBooks ({ results }) {        
     const { theme, setTheme } = useContext(ThemeContext);
@@ -21,10 +22,10 @@ export default function AllBooks ({ results }) {
 
     return (
         <>
-            <Container className={`my-4 ${containerTheme}`}>     
+            <Container className={`mx-4 ${containerTheme}`}>     
                 <ThemeButton changeTheme={changeTheme}/>  
                     <Row>
-                        <Col>
+                        <Col xs={8} lg={8}>
                            <Row>
                                 {/*passo come prop l'ìntero libro, poi lo destrutturo nel componente*/}
                                 {results.map((book) => (
@@ -33,11 +34,9 @@ export default function AllBooks ({ results }) {
                             </Row> 
                         </Col>
                         <Col xs="4" lg="4">
-                            <CommentArea selectedBook={selected}/>
+                            {selected && <CommentArea selectedBook={selected}/>}                            
                         </Col>
-                    </Row>
-                          
-                    
+                    </Row>                        
             </Container>  
         </>
     )

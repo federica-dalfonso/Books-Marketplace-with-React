@@ -3,11 +3,11 @@ import './WelcomeAlert.css'
 import { useState, useEffect } from 'react';
 
 export default function WelcomeAlert () {
-    //gestione scomparsa alert dopo 4s:    
+    //gestione scomparsa alert dopo 2s:    
     const [welcome, setWelcome] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => { setWelcome(false) }, 4500)
+        setTimeout(() => { setWelcome(false) }, 2000)
         }, []);    
 
     return (
