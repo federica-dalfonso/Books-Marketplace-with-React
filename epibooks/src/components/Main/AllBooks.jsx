@@ -34,7 +34,7 @@ export default function AllBooks ({ results }) {
                             </Row> 
                         </Col>
                         <Col xs="4" lg="4">
-                            {selected && <CommentArea selectedBook={selected}/>}                            
+                            {/* {selected && <CommentArea selectedBook={selected}/>}                             */}
                         </Col>
                     </Row>                        
             </Container>  
