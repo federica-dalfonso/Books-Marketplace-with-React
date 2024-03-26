@@ -5,7 +5,7 @@ import { Container, Row, Col} from 'react-bootstrap';
 // todo recupera il parametro ASIN dall'URL impostato in BrowserRouter 
 // todo e carica i dettagli e le recesioni del libro selezionato
 // ! devo importare il JSON e filtrare con l'ASIN il libro corretto!!
-// todo importare react-icons per le icone
+// todo importare react-icons per le icone #212121 (colore sfondo e font nero)
 
 export default function BookDetails () {
 
