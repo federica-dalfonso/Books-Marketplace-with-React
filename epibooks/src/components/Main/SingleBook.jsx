@@ -20,7 +20,7 @@ export default function SingleBook ( {book, onSelect} ) {
 
     return (
         <>
-        <Col sm={12} md={6} lg={6} className='g-4'>
+        <Col sm={12} md={6} lg={3} className='g-4'>
             <Card className={`h-100 cursor-hover border-none ${theme === "dark" ? "back-color-dark" : "back-color-light"}`} onClick={handleClick}>
                 <Card.Img src={img} className={`h-100`}/>
                 <Card.Body className="p-2 d-flex flex-column align-items-center">

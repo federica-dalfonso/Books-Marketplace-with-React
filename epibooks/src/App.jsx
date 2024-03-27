@@ -1,11 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MyNav from './components/MyNav/MyNav.jsx'
-import WelcomeAlert from './components/WelcomeAlert/WelcomeAlert.jsx';
-import AllBooks from './components/Main/AllBooks.jsx';
-import Footer from './components/Footer/Footer.jsx';
+import Homepage from './pages/Homepage.jsx';
 import { useState, useContext } from 'react';
 import jsonData from './data/fantasy.json'
 import { ThemeContext } from "./context/ThemeContextProvider";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   //stato per l'input di ricerca in MyNav:
@@ -25,14 +23,13 @@ function App() {
   const appTheme = theme === "dark" ? "bg-dark" : "bg-light";
 
   return (
-    <div className={appTheme}>        
-      {/* passo le prop a MyNav per gestire la ricerca: */}
-      <MyNav text={inputName} onSearchChange={handleSearch} />
-
-      <WelcomeAlert/> 
-      {/* passo le prop a AllBooks per mostrare i risultati: */}
-      <AllBooks results={searchResult}/>
-      <Footer />
+    <div className={appTheme}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Homepage results={searchResult} text={inputName} onSearchChange={handleSearch}/>}></Route>
+          <Route path='*' element={<h1>Page not found</h1>} ></Route> {/*sistema pagina*/}
+        </Routes>    
+      </BrowserRouter>
     </div>
   );
 }

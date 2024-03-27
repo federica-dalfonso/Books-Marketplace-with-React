@@ -4,12 +4,16 @@ import logoDark from './EPIBOOKS_mint.png';
 import logoLight from './EPIBOOKS_black.png';
 import React, { useContext } from 'react';
 import { ThemeContext } from "../../context/ThemeContextProvider";
-
+import ThemeButton from './ThemeButton';
 
 
 export default function MyNav ({ text, onSearchChange}) {
 
-  const { theme } = useContext(ThemeContext);
+  //tema e bottone
+  const { theme, setTheme } = useContext(ThemeContext);
+    const changeTheme = () => {
+        setTheme(theme === "dark" ? "light" : "dark");
+    };
 
   const navTheme = theme === "light" ? "bg-light" : "bg-dark";
 
@@ -34,6 +38,7 @@ export default function MyNav ({ text, onSearchChange}) {
             value={text}
             onChange={onSearchChange}
           />  
+          <ThemeButton changeTheme={changeTheme}/> 
       </Container>         
     </Navbar>
   )
