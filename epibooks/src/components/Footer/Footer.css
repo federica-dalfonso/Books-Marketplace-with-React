@@ -1,4 +1,9 @@
-div.footer {
-    background-color: #3B3486;
+.background-footer-dark {
+    background-color: #15F5BA;
+    color: #212121;
+}
+
+.background-footer-light {
+    background-color: #212121;
     color: white;
 }

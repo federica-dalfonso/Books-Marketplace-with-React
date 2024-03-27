@@ -5,6 +5,7 @@ import { useState, useContext } from 'react';
 import jsonData from './data/fantasy.json'
 import { ThemeContext } from "./context/ThemeContextProvider";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import BookDetails from './pages/BookDetails.jsx';
 
 function App() {
   //stato per l'input di ricerca in MyNav:
@@ -28,7 +29,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Homepage results={searchResult} text={inputName} onSearchChange={handleSearch}/>}></Route>
-          <Route path='*' element={<NotFound/>}></Route> {/*sistema pagina*/}
+          <Route path='*' element={<NotFound/>}></Route>
+          <Route path='/details/:bookASIN' element={<BookDetails/>}></Route>
         </Routes>    
       </BrowserRouter>
     </div>

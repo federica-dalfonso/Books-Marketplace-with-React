@@ -7,7 +7,7 @@ export default function ThemeContextProvider ( {children} ) {
 
     // uso il localStorage per memorizzare lo stato del tema, altrimenti
     // nella pagina NotFound o in un eventuale refresh non viene mantenuto aggiornato:
-    const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
     useEffect(() => {
         localStorage.setItem("theme", theme);
     }, [theme]);
