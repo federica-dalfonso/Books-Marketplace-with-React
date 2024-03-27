@@ -1,21 +1,27 @@
 import './NotFound.css';
 import { ThemeContext } from "../context/ThemeContextProvider";
 import { useContext } from 'react';
+import logo404 from "./not-found_image.png";
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 export default function NotFound () {
 
     const { theme } = useContext(ThemeContext);
+    // console.log(theme)
+
+    // classe per gestire il tema:
+    const notFoundTheme = theme === "dark" ? "text-light bg-dark" : "text-dark bg-light";
 
     return (
-        <div className='container-not-found text-light d-flex align-intems-center justify-content-center'>
-            <div className='mt-5'>
-                <img src="" alt="" />
-                <div>
-                    <h2>Ci dispiace, ma questa storia non è ancora stata scritta...</h2>
-                    <h1>404 Pagina non trovata</h1>
-                </div>
-            </div>            
-        </div>
+        <Container className={`container-not-found ${notFoundTheme}`}>
+            <Row>
+                <Col className='d-flex flex-column align-items-center justify-content-center'><img className='img-fluid' src={logo404} alt="immagine_404"/></Col>
+                <Col className='d-flex flex-column align-items-start justify-content-center'>
+                    <p className='fs-5'>Ops! Questa storia non è ancora stata scritta...</p>
+                    <h2>Pagina non trovata!</h2> 
+                </Col>
+            </Row>
+        </Container>
     )
 }
