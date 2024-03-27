@@ -4,7 +4,7 @@ import AllBooks from '../components/Main/AllBooks.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 
 
-export default function Homepage ({ results, text, onSearchChange}) {
+export default function Homepage ({ results, text, onSearchChange }) {
 
     return (
         <>

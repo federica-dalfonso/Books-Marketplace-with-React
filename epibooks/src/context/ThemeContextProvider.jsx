@@ -4,7 +4,7 @@ import { useState } from "react";
 export const ThemeContext = createContext(null);
 
 export default function ThemeContextProvider ( {children} ) {
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState("dark");
 
     const value = {
         theme,
@@ -12,6 +12,6 @@ export default function ThemeContextProvider ( {children} ) {
     };
 
     return (
-        <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+        <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>        
     )
 }

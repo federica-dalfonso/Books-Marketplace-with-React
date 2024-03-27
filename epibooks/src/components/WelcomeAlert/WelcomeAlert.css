@@ -1,9 +1,9 @@
 .welcome-message {
-    background-color: #3B3486;
+    background-color: #15f5b9;
     border: none;
     color: white;
     width: 85%;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px; /*sistema!*/
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .position-up {

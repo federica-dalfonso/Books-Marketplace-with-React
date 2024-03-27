@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Homepage from './pages/Homepage.jsx';
+import NotFound from './pages/NotFound.jsx';
 import { useState, useContext } from 'react';
 import jsonData from './data/fantasy.json'
 import { ThemeContext } from "./context/ThemeContextProvider";
@@ -27,7 +28,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Homepage results={searchResult} text={inputName} onSearchChange={handleSearch}/>}></Route>
-          <Route path='*' element={<h1>Page not found</h1>} ></Route> {/*sistema pagina*/}
+          <Route path='*' element={<NotFound/>}></Route> {/*sistema pagina*/}
         </Routes>    
       </BrowserRouter>
     </div>

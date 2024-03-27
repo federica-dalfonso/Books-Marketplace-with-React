@@ -1,7 +1,10 @@
 import "./SingleBook.css"
-import { Col, Card } from "react-bootstrap"
+import { Col, Card, Button } from "react-bootstrap"
 import React, { useContext } from 'react';
 import { ThemeContext } from "../../context/ThemeContextProvider";
+import { SlEyeglass } from "react-icons/sl";
+
+import { Link } from "react-router-dom";
 
 
 export default function SingleBook ( {book, onSelect} ) {
@@ -20,12 +23,14 @@ export default function SingleBook ( {book, onSelect} ) {
 
     return (
         <>
-        <Col sm={12} md={6} lg={3} className='g-4'>
-            <Card className={`h-100 cursor-hover border-none ${theme === "dark" ? "back-color-dark" : "back-color-light"}`} onClick={handleClick}>
-                <Card.Img src={img} className={`h-100`}/>
-                <Card.Body className="p-2 d-flex flex-column align-items-center">
-                    <Card.Title className={`fs-6 text-center ellipsis px-2 ${theme === "dark" ? "text-light" : "text-dark"}`}>{title}</Card.Title>
-                    <Card.Text className={`fw-lighter py-1 px-2 ${theme === "dark" ? "text-light" : "text-dark"}`}>{price} euro</Card.Text>
+        <Col sm={12} md={6} lg={3} className='g-2'>
+            <Card className={`custom-card cursor-hover ${theme === "dark" ? "back-color-dark" : "back-color-light"}`}>
+                <Card.Img variant="top" src={img} className="img-fluid" />
+                <Card.Body>
+                    <Card.Subtitle className="text-uppercase subtitle-style py-2">fantasy</Card.Subtitle>
+                    <Card.Title className={`ellipsis size-title text-uppercase mb-4 ${theme === "dark" ? "text-light" : "text-dark"}`}>{title}</Card.Title>                  
+                    <Card.Subtitle className={`mb-3 fw-lighter text-uppercase size-price ${theme === "dark" ? "text-light" : "text-dark"}`}>{`${price} euro`}</Card.Subtitle>                   
+                    <Link href="#" className="link-style">DETTAGLI <SlEyeglass /></Link>                                          
                 </Card.Body>
             </Card>
         </Col> 

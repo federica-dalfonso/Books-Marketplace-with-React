@@ -20,7 +20,7 @@ export default function AllBooks ({ results }) {
 
     return (
         <>
-            <Container className={`${containerTheme}`}>       
+            <Container className={`mt-5 ${containerTheme}`}>       
                     <Row>                                                                
                         {/*passo come prop l'ìntero libro, poi lo destrutturo nel componente*/}
                         {results.map((book) => (
